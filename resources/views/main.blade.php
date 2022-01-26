@@ -1,11 +1,12 @@
 @extends('layouts.main-layout')
 @section('title','Active')
 @section('content')
+@foreach($petitions as $petition)
 <article class="petition">
     <div class="row">
         <div class="col-8">
-            <p class="number">#111</p>
-            <p class="petition-title">Title</p>
+            <p class="number">{{'#'. 10000+$petition->id}}</p>
+            <p class="petition-title">{{$petition->title}}</p>
             <div class="petition-date">
                 <i class="fas fa-clock text-primary"></i>
                 <span class="creation-date">25-01-2022</span>
@@ -13,10 +14,10 @@
         </div>
         <div class="col-4">
             <div class="voting">
-                <h1>30</h1><p>votes</p>
+                <h1>{{$petition->votes}}</h1><p>votes</p>
             </div>
             <div class="vote-progress">
-                <div class="progress-bar" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: {{$petition->votes}}%" aria-valuenow="{{$petition->votes}}" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
             <div class="vote-status">
                 <i class="fas fa-check-circle text-success"></i>
@@ -31,6 +32,7 @@
 
     </div>
 </article>
+@endforeach
 <div class="page-counter">
     <a class="current-disabled">&lt;</a>
     <a class="current-count" href="#page1">1</a>

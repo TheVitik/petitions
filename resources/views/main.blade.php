@@ -1,6 +1,6 @@
 @extends('layouts.main-layout')
 @section('title','Active')
-@section('petitions')
+@section('content')
 <article class="petition">
     <div class="row">
         <div class="col-8">
@@ -28,10 +28,9 @@
                 <a class="create-button" href="/delete">Delete</a>
                 <a class="create-button " href="vote?id=${petition.id}">Vote</a>
         </div>
+
     </div>
 </article>
-@endsection
-@section('page-counter')
 <div class="page-counter">
     <a class="current-disabled">&lt;</a>
     <a class="current-count" href="#page1">1</a>

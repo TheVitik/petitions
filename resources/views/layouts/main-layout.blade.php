@@ -61,10 +61,8 @@
         <main>
             <div class="container">
                 <h2 class="page-title">@yield('title') PETITIONS</h2>
-
-                @yield('petitions')
-                @yield('page-counter')
-                    </div>
+                @yield('content')
+            </div>
         </main>
     <footer>
         <div class="footer-info">
